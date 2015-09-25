@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelRepository;
+import com.intellij.openapi.ui.Messages;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -111,6 +112,7 @@ public class RefreshTestProject_Action extends BaseAction {
   }
   private boolean doExecute(ProgressIndicator proInd, final AnActionEvent event) {
     final Wrappers._T<SModel> target = new Wrappers._T<SModel>();
+    final Wrappers._boolean ok = new Wrappers._boolean(true);
     event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         // shamelessly copypasted from the smodel lang's generator 
@@ -120,8 +122,15 @@ public class RefreshTestProject_Action extends BaseAction {
           targetName += "@" + SPropertyOperations.getString(targetRef, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e93b6fL, "stereotype"));
         }
         target.value = SModelRepository.getInstance().getModelDescriptor(targetName);
+        if (target.value == null) {
+          Messages.showErrorDialog(event.getData(CommonDataKeys.PROJECT), "Not found target model: " + targetName, "Model Not Found");
+          ok.value = false;
+        }
       }
     });
+    if (!(ok.value)) {
+      return false;
+    }
 
     final List<SNode> manifests = new ArrayList<SNode>();
     event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
@@ -165,7 +174,7 @@ public class RefreshTestProject_Action extends BaseAction {
       }
     });
 
-    return true;
+    return ok.value;
   }
   private void displayInfo(String info, final AnActionEvent event) {
     IdeFrame frame = WindowManager.getInstance().getIdeFrame(event.getData(CommonDataKeys.PROJECT));

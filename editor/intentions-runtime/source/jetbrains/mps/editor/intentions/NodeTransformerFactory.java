@@ -30,7 +30,7 @@ import java.util.Collection;
  * This factory produces a set of transformers and defines applicability rules for them depending on current context.
  * The current context consists of node we try to apply transforms to, currently selected node and editor context.
  * Note that node to apply transforms to (N) can differ from currently selected node (CN) if isAvailableInChildren()==true.
- * In this case, CN can be a child of N.
+ * In this case, CN can be either a child of N or equal to N.
  *
  * Algorithm for checking factory applicability in current context.
  * 1. if !N.concept.isSubConcept(getApplicableConcept)     => factory not applicable

@@ -42,6 +42,7 @@ public interface NodeTransformer {
 
   /**
    * Returns user-readable description of this transformation.
+   * Invoked with read action held
    */
   String getDescription();
 

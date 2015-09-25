@@ -41,7 +41,7 @@
       <ref role="2Uj$mc" to="tw7x:6DW_AMABjI_" resolve="Subtyping" />
     </node>
     <node concept="BaHAS" id="6DW_AMA$9QX" role="3cVaLd">
-      <property role="BaHAW" value="jetbrains.mps.ide.build.tests.generated" />
+      <property role="BaHAW" value="jetbrains.mps.ide.build.tests.generatedTests" />
       <property role="BaGAP" value="" />
     </node>
   </node>
