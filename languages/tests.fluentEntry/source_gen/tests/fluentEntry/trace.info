@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <root>
+    <file name="Language.java">
+      <unit at="47,21,47,56" name="tests.fluentEntry.Language$1" />
+      <unit at="19,0,61,0" name="tests.fluentEntry.Language" />
+    </file>
+  </root>
+</debug-info>
+
