@@ -33,6 +33,7 @@ public class QueriesGenerated {
           public String getDescriptionText(String pattern) {
             return "simple text";
           }
+
         });
       }
     }

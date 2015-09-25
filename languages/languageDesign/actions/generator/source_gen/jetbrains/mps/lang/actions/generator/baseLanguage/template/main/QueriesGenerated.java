@@ -274,6 +274,15 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1238774270538(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122837a3cdL, 0x11e73a4bf93L, "actionType")) != null;
   }
+  public static boolean ifMacro_Condition_4968757372715506697(final IfMacroContext _context) {
+    {
+      final SNode fluent = _context.getNode();
+      if (SNodeOperations.isInstanceOf(fluent, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x696999ea1ac4623fL, "jetbrains.mps.lang.actions.structure.FluentEntrySubstitutePart"))) {
+        return true;
+      }
+    }
+    return false;
+  }
   public static boolean ifMacro_Condition_1249517990922732206(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ecab8a6L, 0x567611c6614eff6dL, "selectionHandler")) != null;
   }

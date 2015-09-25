@@ -15,8 +15,8 @@
   <root nodeRef="r:ce0cd52d-0270-4273-b852-74c1f8d7cb18(tests.fluentEntry.editor)/4968757372716474145">
     <file name="Expr_Editor.java">
       <node id="4968757372716474145" at="21,79,22,61" concept="6" />
-      <node id="4968757372716474145" at="24,87,25,86" concept="5" />
-      <node id="4968757372716474145" at="25,86,26,46" concept="2" />
+      <node id="4968757372716474145" at="24,87,25,163" concept="5" />
+      <node id="4968757372716474145" at="25,163,26,46" concept="2" />
       <node id="4968757372716474145" at="26,46,27,28" concept="2" />
       <node id="4968757372716474145" at="27,28,28,34" concept="5" />
       <node id="4968757372716474145" at="28,34,29,49" concept="2" />

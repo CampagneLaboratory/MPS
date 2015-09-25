@@ -63,7 +63,7 @@
     <node concept="1TJgyj" id="4jO$C4ZR_HD" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
-      <property role="20lbJX" value="0..1" />
+      <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="4jO$C4ZR7lB" resolve="Expr" />
     </node>
   </node>

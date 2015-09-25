@@ -50,7 +50,7 @@
   <node concept="24kQdi" id="4jO$C4ZR_Wx">
     <ref role="1XX52x" to="s19v:4jO$C4ZR7lB" resolve="Expr" />
     <node concept="3F0ifn" id="4jO$C4ZRFuZ" role="2wV5jI">
-      <property role="3F0ifm" value="" />
+      <property role="3F0ifm" value="&lt;- type the int value before the arrow (e.g., '1' for simple, '1 ' for fluent" />
       <node concept="VPxyj" id="4jO$C4ZRFwE" role="3F10Kt">
         <property role="VOm3f" value="true" />
       </node>

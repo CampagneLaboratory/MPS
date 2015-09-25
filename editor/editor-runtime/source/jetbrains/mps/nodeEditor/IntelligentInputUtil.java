@@ -41,7 +41,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Comparator;
 import java.util.List;
 
 public class IntelligentInputUtil {
@@ -232,22 +231,6 @@ public class IntelligentInputUtil {
     }
     return false;
   }
-
-  private static boolean hasFluentActions(List<SubstituteAction> matchingActions) {
-    for (SubstituteAction item : matchingActions) {
-      if (item.isFluentEntry()) return true;
-    }
-    return false;
-  }
-
-  private static final Comparator<SubstituteAction> fluentComparator = new Comparator<SubstituteAction>() {
-
-    @Override
-    public int compare(SubstituteAction a, SubstituteAction b) {
-      // push fluent entry actions to the end of the actions list
-      return (b.isFluentEntry() ? 1 : 0) - (a.isFluentEntry() ? 1 : 0);
-    }
-  };
 
   private static boolean applyRigthTransform(EditorContext editorContext, String smallPattern, final String tail,
       final EditorCell cellForNewNode, SNode newNode) {

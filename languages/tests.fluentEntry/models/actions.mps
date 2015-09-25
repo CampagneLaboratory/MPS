@@ -72,6 +72,12 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
     </language>
     <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions">
       <concept id="1196434649611" name="jetbrains.mps.lang.actions.structure.Substitute_SimpleString" flags="ng" index="2h3Zct">
@@ -97,6 +103,7 @@
         <child id="1112058057696" name="actionsBuilder" index="3FOPby" />
       </concept>
       <concept id="1112058030570" name="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" flags="ig" index="3FOIzC">
+        <property id="1158952412335" name="description" index="3mWAmy" />
         <reference id="1112058088712" name="applicableConcept" index="3FOWKa" />
         <child id="1177324142645" name="part" index="tZc4B" />
       </concept>
@@ -162,6 +169,7 @@
   <node concept="3FK_9_" id="4jO$C4ZR7lI">
     <property role="TrG5h" value="FluentExample" />
     <node concept="3FOIzC" id="4jO$C4ZR7lJ" role="3FOPby">
+      <property role="3mWAmy" value="Replace Expr with Integer with fluent or simple action '1 ' for fluent, '1' for simple. Notice how becomes visible only when no other action can substitute." />
       <ref role="3FOWKa" to="s19v:4jO$C4ZR7lB" resolve="Expr" />
       <node concept="tYCnQ" id="4jO$C4ZR7lM" role="tZc4B">
         <ref role="uz4UX" to="s19v:4jO$C4ZR7lC" resolve="Integer" />
@@ -214,6 +222,11 @@
           </node>
           <node concept="uaGSO" id="4jO$C4ZRiPe" role="ucKa5">
             <node concept="3clFbS" id="4jO$C4ZRiPf" role="2VODD2">
+              <node concept="3SKdUt" id="64EUFCoyrM3" role="3cqZAp">
+                <node concept="3SKdUq" id="64EUFCoyrMu" role="3SKWNk">
+                  <property role="3SKdUp" value="fluent entry expects an integer followed by exactly one space " />
+                </node>
+              </node>
               <node concept="34ab3g" id="4jO$C4ZRRKR" role="3cqZAp">
                 <property role="35gtTG" value="info" />
                 <node concept="3cpWs3" id="4jO$C4ZRYYq" role="34bqiv">
@@ -346,6 +359,11 @@
           </node>
           <node concept="uaGSO" id="4jO$C4ZSbQQ" role="ucKa5">
             <node concept="3clFbS" id="4jO$C4ZSbQR" role="2VODD2">
+              <node concept="3SKdUt" id="64EUFCoys13" role="3cqZAp">
+                <node concept="3SKdUq" id="64EUFCoys1r" role="3SKWNk">
+                  <property role="3SKdUp" value="imple item expects an integer without any trailing space" />
+                </node>
+              </node>
               <node concept="34ab3g" id="4jO$C4ZSbY9" role="3cqZAp">
                 <property role="35gtTG" value="info" />
                 <node concept="3cpWs3" id="4jO$C4ZSbYa" role="34bqiv">
@@ -362,16 +380,9 @@
               </node>
               <node concept="1QpiS5" id="4jO$C4ZSbYf" role="3cqZAp">
                 <node concept="1Qi9sc" id="4jO$C4ZSbYg" role="1YN4dH">
-                  <node concept="1OJ37Q" id="4jO$C4ZSbYh" role="1QigWp">
-                    <node concept="1OClNT" id="4jO$C4ZSbYi" role="1OLpdg">
-                      <node concept="1SYyG9" id="4jO$C4ZSbYj" role="1OLDsb">
-                        <ref role="1SYXPG" to="tpfp:h5SUwpi" resolve="\d" />
-                      </node>
-                    </node>
-                    <node concept="1SSJmt" id="4jO$C4ZSbYk" role="1OLqdY">
-                      <node concept="1T6I$Y" id="4jO$C4ZSbYl" role="1T5LoC">
-                        <property role="1T6KD9" value=" " />
-                      </node>
+                  <node concept="1OClNT" id="4jO$C4ZSbYi" role="1QigWp">
+                    <node concept="1SYyG9" id="4jO$C4ZSbYj" role="1OLDsb">
+                      <ref role="1SYXPG" to="tpfp:h5SUwpi" resolve="\d" />
                     </node>
                   </node>
                 </node>
@@ -380,7 +391,7 @@
                   <node concept="34ab3g" id="4jO$C4ZSbYo" role="3cqZAp">
                     <property role="35gtTG" value="info" />
                     <node concept="Xl_RD" id="4jO$C4ZSbYp" role="34bqiv">
-                      <property role="Xl_RC" value="fluent returning true" />
+                      <property role="Xl_RC" value="simple item returning true" />
                     </node>
                   </node>
                   <node concept="3cpWs6" id="4jO$C4ZSbYq" role="3cqZAp">

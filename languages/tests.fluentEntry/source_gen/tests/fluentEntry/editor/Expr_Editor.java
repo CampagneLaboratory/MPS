@@ -22,7 +22,7 @@ public class Expr_Editor extends DefaultNodeEditor {
     return this.createConstant_v8iyyj_a(editorContext, node);
   }
   private EditorCell createConstant_v8iyyj_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<- type the int value before the arrow (e.g., '1' for simple, '1 ' for fluent");
     editorCell.setCellId("Constant_v8iyyj_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();

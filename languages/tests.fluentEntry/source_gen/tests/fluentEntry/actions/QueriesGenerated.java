@@ -37,11 +37,12 @@ public class QueriesGenerated {
             return true;
           }
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            // fluent entry expects an integer followed by exactly one space  
             if (LOG.isInfoEnabled()) {
               LOG.info("pattern='" + pattern + "'");
             }
             {
-              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0c0a0a0a0c0a0b0a;
+              Pattern _pattern_0 = REGEXP_x583g4_a0a0c0c0a0a0a0c0a0b0a;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.matches()) {
                 if (LOG.isInfoEnabled()) {
@@ -82,15 +83,16 @@ public class QueriesGenerated {
             return true;
           }
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            // imple item expects an integer without any trailing space 
             if (LOG.isInfoEnabled()) {
               LOG.info("pattern='" + pattern + "'");
             }
             {
-              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0c0a0a0a0c0b0b0a;
+              Pattern _pattern_0 = REGEXP_x583g4_a0a0c0c0a0a0a0c0b0b0a;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.matches()) {
                 if (LOG.isInfoEnabled()) {
-                  LOG.info("fluent returning true");
+                  LOG.info("simple item returning true");
                 }
                 return true;
               }
@@ -113,6 +115,6 @@ public class QueriesGenerated {
     return result;
   }
   protected static Logger LOG = LogManager.getLogger(QueriesGenerated.class);
-  private static Pattern REGEXP_x583g4_a0a0b0c0a0a0a0c0a0b0a = Pattern.compile("\\d+[ ]", 0);
-  private static Pattern REGEXP_x583g4_a0a0b0c0a0a0a0c0b0b0a = Pattern.compile("\\d+[ ]", 0);
+  private static Pattern REGEXP_x583g4_a0a0c0c0a0a0a0c0a0b0a = Pattern.compile("\\d+[ ]", 0);
+  private static Pattern REGEXP_x583g4_a0a0c0c0a0a0a0c0b0b0a = Pattern.compile("\\d+", 0);
 }

@@ -364,6 +364,7 @@ public class QueriesGenerated {
 
             return _quotation_createNode_mw8afp_a8a0a0a();
           }
+
         });
       }
     }
@@ -387,6 +388,7 @@ public class QueriesGenerated {
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
+
         });
       }
     }
@@ -434,6 +436,7 @@ public class QueriesGenerated {
           public SNode getActionType(String pattern) {
             return _quotation_createNode_mw8afp_a0a0a1a();
           }
+
         });
       }
     }

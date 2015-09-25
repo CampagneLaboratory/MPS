@@ -26,70 +26,72 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 5:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CopyPreProcessor_Editor()));
       case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GenerateCodeAction_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new FluentEntrySubstitutePart_Editor()));
       case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GenericSubstituteMenuPart_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GenerateCodeAction_Editor()));
       case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IncludeRightTransformForNodePart_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GenericSubstituteMenuPart_Editor()));
       case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MenuPart_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IncludeRightTransformForNodePart_Editor()));
       case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NF_Concept_NewInstance_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MenuPart_Editor()));
       case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NF_Model_CreateNewNodeOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NF_Concept_NewInstance_Editor()));
       case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NF_Model_CreateNewRootNodeOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NF_Model_CreateNewNodeOperation_Editor()));
       case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeFactories_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NF_Model_CreateNewRootNodeOperation_Editor()));
       case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeFactory_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeFactories_Editor()));
       case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeSubstituteActions_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeFactory_Editor()));
       case 16:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeSubstituteActionsBuilder_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeSubstituteActions_Editor()));
       case 17:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ParameterizedSideTransformMenuPart_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeSubstituteActionsBuilder_Editor()));
       case 18:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ParameterizedSubstituteMenuPart_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ParameterizedSideTransformMenuPart_Editor()));
       case 19:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PastePostProcessor_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ParameterizedSubstituteMenuPart_Editor()));
       case 20:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PasteWrapper_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PastePostProcessor_Editor()));
       case 21:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PasteWrappers_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PasteWrapper_Editor()));
       case 22:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RemoveByConditionPart_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PasteWrappers_Editor()));
       case 23:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RemoveDefaultsPart_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RemoveByConditionPart_Editor()));
       case 24:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RemovePart_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RemoveDefaultsPart_Editor()));
       case 25:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RemoveSTByConditionPart_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RemovePart_Editor()));
       case 26:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeCreatorAndInitializer_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RemoveSTByConditionPart_Editor()));
       case 27:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SideTransformHintSubstituteActions_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeCreatorAndInitializer_Editor()));
       case 28:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SideTransformHintSubstituteActionsBuilder_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SideTransformHintSubstituteActions_Editor()));
       case 29:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SideTransformVariableDeclaration_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SideTransformHintSubstituteActionsBuilder_Editor()));
       case 30:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SideTransform_SimpleString_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SideTransformVariableDeclaration_Editor()));
       case 31:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SimpleItemSubstitutePart_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SideTransform_SimpleString_Editor()));
       case 32:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SimpleSideTransformMenuPart_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SimpleItemSubstitutePart_Editor()));
       case 33:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SmartActionParameter_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SimpleSideTransformMenuPart_Editor()));
       case 34:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SmartActionParameterReference_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SmartActionParameter_Editor()));
       case 35:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SmartEditorActions_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SmartActionParameterReference_Editor()));
       case 36:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SubstituteNodeBuilderVariableDeclaration_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SmartEditorActions_Editor()));
       case 37:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Substitute_SimpleString_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SubstituteNodeBuilderVariableDeclaration_Editor()));
       case 38:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Substitute_SimpleString_Editor()));
+      case 39:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new WrapperSubstituteMenuPart_Editor()));
       default:
     }
@@ -97,9 +99,18 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
+      case 0:
+        if ("jetbrains.mps.lang.actions.editor.SimpleItemSubsitutePartComponent".equals(editorComponentId)) {
+          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new SimpleItemSubsitutePartComponent()));
+        }
+        break;
+      default:
+    }
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart", "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart", "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.CopyPasteHandlers", "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "jetbrains.mps.lang.actions.structure.GenerateCodeAction", "jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart", "jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.actions.structure.NodeFactories", "jetbrains.mps.lang.actions.structure.NodeFactory", "jetbrains.mps.lang.actions.structure.NodeSubstituteActions", "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.PastePostProcessor", "jetbrains.mps.lang.actions.structure.PasteWrapper", "jetbrains.mps.lang.actions.structure.PasteWrappers", "jetbrains.mps.lang.actions.structure.RemoveByConditionPart", "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart", "jetbrains.mps.lang.actions.structure.RemovePart", "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration", "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SmartActionParameter", "jetbrains.mps.lang.actions.structure.SmartActionParameterReference", "jetbrains.mps.lang.actions.structure.SmartEditorActions", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration", "jetbrains.mps.lang.actions.structure.Substitute_SimpleString", "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart", "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart", "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.CopyPasteHandlers", "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "jetbrains.mps.lang.actions.structure.FluentEntrySubstitutePart", "jetbrains.mps.lang.actions.structure.GenerateCodeAction", "jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart", "jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.actions.structure.NodeFactories", "jetbrains.mps.lang.actions.structure.NodeFactory", "jetbrains.mps.lang.actions.structure.NodeSubstituteActions", "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.PastePostProcessor", "jetbrains.mps.lang.actions.structure.PasteWrapper", "jetbrains.mps.lang.actions.structure.PasteWrappers", "jetbrains.mps.lang.actions.structure.RemoveByConditionPart", "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart", "jetbrains.mps.lang.actions.structure.RemovePart", "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration", "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SmartActionParameter", "jetbrains.mps.lang.actions.structure.SmartActionParameterReference", "jetbrains.mps.lang.actions.structure.SmartEditorActions", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration", "jetbrains.mps.lang.actions.structure.Substitute_SimpleString", "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart"};
 }
