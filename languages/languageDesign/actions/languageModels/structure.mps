@@ -1751,5 +1751,12 @@
     <property role="1pbfSe" value="1845638958" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
+  <node concept="1TIwiD" id="6_DAuCqL68Z">
+    <property role="1pbfSe" value="2077361111" />
+    <property role="3GE5qa" value="menuParts.Substitute" />
+    <property role="TrG5h" value="FluentEntrySubstitutePart" />
+    <property role="34LRSv" value="fluent" />
+    <ref role="1TJDcQ" node="h8ucCh3" resolve="SimpleItemSubstitutePart" />
+  </node>
 </model>
 

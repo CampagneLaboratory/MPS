@@ -60,7 +60,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   private String myOriginalText;
   private EditorContext myEditorContext;
 
-  public AbstractNodeSubstituteInfo(EditorContext editorContext) {
+    public AbstractNodeSubstituteInfo(EditorContext editorContext) {
     myEditorContext = editorContext;
   }
 
@@ -99,7 +99,10 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
         int count = 0;
         for (SubstituteAction action : getActionsFromCache(pattern, strictMatching)) {
           if (strictMatching ? action.canSubstituteStrictly(pattern) : action.canSubstitute(pattern)) {
-            count++;
+            if (!action.isFluentEntry()) {
+              // do not count fluent entries
+              count++;
+            }
           }
 
           if (count > n) return false;
@@ -155,18 +158,55 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
     return new ModelAccessHelper(myEditorContext.getRepository()).runReadAction(new Computable<List<SubstituteAction>>() {
       @Override
       public List<SubstituteAction> compute() {
+        boolean hasSomeFluentEntries = false;
         List<SubstituteAction> actionsFromCache = getActionsFromCache(pattern, strictMatching);
         ArrayList<SubstituteAction> result = new ArrayList<SubstituteAction>(actionsFromCache.size());
         for (SubstituteAction item : actionsFromCache) {
           try {
             if (strictMatching ? item.canSubstituteStrictly(pattern) : SubstituteActionUtil.canSubstitute(item, pattern)) {
+              hasSomeFluentEntries |= item.isFluentEntry();
               result.add(item);
             }
           } catch (Throwable th) {
             LOG.error("Exception on calling canSubstitute on a substitute action " + (item == null ? "null" : item.getClass()), th);
           }
         }
-        putActionsToCache(pattern, strictMatching, result);
+        // put all actions in cache, whether they are fluent entries or not:
+        putActionsToCache(pattern, strictMatching, new ArrayList<SubstituteAction>(result));
+        if (hasSomeFluentEntries) {
+          // but remove fluent entry actions if any are present
+          List<SubstituteAction> fluent = new ArrayList<SubstituteAction>();
+
+          for (SubstituteAction action : result) {
+            if (action.isFluentEntry()) fluent.add(action);
+          }
+          result.removeAll(fluent);
+        }
+        result.trimToSize();
+        return result;
+      }
+    });
+  }
+
+  public List<SubstituteAction> getFluentActions(final String pattern, final boolean strictMatching) {
+    return new ModelAccessHelper(myEditorContext.getRepository()).runReadAction(new Computable<List<SubstituteAction>>() {
+      @Override
+      public List<SubstituteAction> compute() {
+        List<SubstituteAction> actionsFromCache = getActionsFromCache(pattern, strictMatching);
+        ArrayList<SubstituteAction> result = new ArrayList<SubstituteAction>(actionsFromCache.size());
+        for (SubstituteAction item : actionsFromCache) {
+          try {
+            if (strictMatching ? item.canSubstituteStrictly(pattern) : SubstituteActionUtil.canSubstitute(item, pattern)) {
+              //return only fluent entry actions:
+              if (item.isFluentEntry()) {
+                result.add(item);
+              }
+            }
+          } catch (Throwable th) {
+            LOG.error("Exception on calling canSubstitute on a substitute action " + (item == null ? "null" : item.getClass()), th);
+          }
+        }
+// do not update the cache.
         result.trimToSize();
         return result;
       }

@@ -29,6 +29,11 @@ public class NullSubstituteInfo implements SubstituteInfo {
   }
 
   @Override
+  public List<SubstituteAction> getFluentActions(String pattern, boolean strictMatching) {
+    return new ArrayList<SubstituteAction>();
+  }
+
+  @Override
   public List<SubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
     return new ArrayList<SubstituteAction>();
   }

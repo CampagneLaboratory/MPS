@@ -49,4 +49,11 @@ public interface SubstituteAction {
   boolean canSubstitute(String pattern);
 
   SNode substitute(@Nullable EditorContext context, String pattern);
+
+  /**
+   * Actions that implement fluent data entry return true, other false. Return value is false
+   * in abstract implementations of this interface to maintain backward compatibility.
+   * @return
+   */
+  boolean isFluentEntry();
 }

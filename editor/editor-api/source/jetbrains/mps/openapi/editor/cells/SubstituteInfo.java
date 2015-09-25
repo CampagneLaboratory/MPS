@@ -23,6 +23,8 @@ import java.util.List;
  */
 public interface SubstituteInfo {
   List<SubstituteAction> getMatchingActions(String pattern, boolean strictMatching);
+  List<SubstituteAction> getFluentActions(String pattern, boolean strictMatching);
+
 
   List<SubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell);
 
@@ -33,5 +35,5 @@ public interface SubstituteInfo {
 
   String getOriginalText();
 
-  boolean hasExactlyNActions(String pattern, boolean strictMatching, int n);
+  boolean hasExactlyNActions(final String pattern, boolean strictMatching, final int n);
 }

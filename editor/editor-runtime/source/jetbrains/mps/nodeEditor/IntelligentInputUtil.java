@@ -39,10 +39,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class IntelligentInputUtil {
@@ -211,14 +210,20 @@ public class IntelligentInputUtil {
       SubstituteAction item = matchingActions.get(0);
       item.substitute(editorContext, smallPattern + tail);
       return true;
+    } else if (hasMatchingFluentEntries(substituteInfo, smallPattern + tail)) {
+      List<SubstituteAction> matchingActions = substituteInfo.getFluentActions(smallPattern + tail, false);
+      SubstituteAction item = matchingActions.get(0);
+      item.substitute(editorContext, smallPattern + tail);
+      return true;
     } else {
+
       if (isInOneStepAmbigousPosition(substituteInfo, smallPattern + tail)) {
-        if (tryToSubstituteFirstSutable(editorContext, smallPattern + tail, substituteInfo)) {
+        if (tryToSubstituteFirstSuitable(editorContext, smallPattern + tail, substituteInfo)) {
           return true;
         }
         activateNodeSubstituteChooser(editorContext, cell, substituteInfo);
       } else if (isInAmbigousPosition(substituteInfo, smallPattern, tail)) {
-        if (tryToSubstituteFirstSutable(editorContext, smallPattern, substituteInfo)) {
+        if (tryToSubstituteFirstSuitable(editorContext, smallPattern, substituteInfo)) {
           return true;
         }
         cell.setText(smallPattern);
@@ -227,6 +232,22 @@ public class IntelligentInputUtil {
     }
     return false;
   }
+
+  private static boolean hasFluentActions(List<SubstituteAction> matchingActions) {
+    for (SubstituteAction item : matchingActions) {
+      if (item.isFluentEntry()) return true;
+    }
+    return false;
+  }
+
+  private static final Comparator<SubstituteAction> fluentComparator = new Comparator<SubstituteAction>() {
+
+    @Override
+    public int compare(SubstituteAction a, SubstituteAction b) {
+      // push fluent entry actions to the end of the actions list
+      return (b.isFluentEntry() ? 1 : 0) - (a.isFluentEntry() ? 1 : 0);
+    }
+  };
 
   private static boolean applyRigthTransform(EditorContext editorContext, String smallPattern, final String tail,
       final EditorCell cellForNewNode, SNode newNode) {
@@ -289,7 +310,7 @@ public class IntelligentInputUtil {
     return true;
   }
 
-  private static boolean tryToSubstituteFirstSutable(EditorContext editorContext, String text, SubstituteInfo substituteInfo) {
+  private static boolean tryToSubstituteFirstSuitable(EditorContext editorContext, String text, SubstituteInfo substituteInfo) {
     SNode concept = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept();
     if (concept == null) {
       return false;
@@ -395,6 +416,10 @@ public class IntelligentInputUtil {
 
   private static boolean canCompleteTheWholeStringImmediately(SubstituteInfo info, String pattern) {
     return info.hasExactlyNActions(pattern, true, 1) && info.hasExactlyNActions(pattern, false, 1);
+  }
+
+  private static boolean hasMatchingFluentEntries(SubstituteInfo info, String pattern) {
+    return info.getFluentActions(pattern, true).size() == 1 || info.getFluentActions(pattern, false).size() == 1 ;
   }
 
   private static boolean isInAmbigousPosition(SubstituteInfo info, String smallPattern, String tail) {

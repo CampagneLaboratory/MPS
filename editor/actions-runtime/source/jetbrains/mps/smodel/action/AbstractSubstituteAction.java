@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -165,6 +164,11 @@ public abstract class AbstractSubstituteAction implements SubstituteAction {
     }
 
     return newNode[0];
+  }
+
+  @Override
+  public boolean isFluentEntry() {
+    return false;
   }
 
   public String toString() {

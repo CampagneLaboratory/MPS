@@ -25,7 +25,6 @@ import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -201,6 +200,11 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
     }
 
     return newNode[0];
+  }
+
+  @Override
+  public boolean isFluentEntry() {
+    return false;
   }
 
   public String toString() {

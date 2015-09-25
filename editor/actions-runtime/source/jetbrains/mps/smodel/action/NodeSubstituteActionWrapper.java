@@ -88,6 +88,11 @@ public class NodeSubstituteActionWrapper implements SubstituteAction {
   }
 
   @Override
+  public boolean isFluentEntry() {
+    return false;
+  }
+
+  @Override
   public SNode getActionType(String pattern, EditorCell contextCell) {
     return mySubstituteAction.getActionType(pattern, contextCell);
   }
